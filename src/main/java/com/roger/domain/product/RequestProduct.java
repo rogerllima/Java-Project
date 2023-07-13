@@ -4,10 +4,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
 public class RequestProduct {
+    public UUID id;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
     public String name;
     public Integer price;
 
