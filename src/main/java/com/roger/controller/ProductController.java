@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(value = "/products")
 public class ProductController {
     @Autowired
@@ -31,11 +32,11 @@ public class ProductController {
     @PutMapping()
     @Transactional
     public ResponseEntity updateProduct(@RequestBody RequestProduct data) {
-       return service.updateProduct(data);
+        return service.updateProduct(data);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteProduct(@PathVariable UUID id){
+    public ResponseEntity deleteProduct(@PathVariable UUID id) {
         return service.deleteProduct(id);
     }
 }

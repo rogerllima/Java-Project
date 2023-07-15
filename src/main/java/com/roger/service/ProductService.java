@@ -43,14 +43,7 @@ public class ProductService {
     }
 
     public ResponseEntity deleteProduct(UUID id){
-        Optional<Product> optionalProduct = repository.findById(id);
-        if (optionalProduct.isPresent()) {
-            Product product = optionalProduct.get();
-            repository.delete(product);
-            return ResponseEntity.ok().build();
-
-        }
-        return ResponseEntity.notFound().build();
-
+            repository.deleteById(id);
+            return ResponseEntity.noContent().build();
     }
 }
